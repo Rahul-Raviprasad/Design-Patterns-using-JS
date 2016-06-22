@@ -60,3 +60,41 @@ Move quickly to explore your game’s design space, but don’t go so fast that 
 If you are going to ditch code, don’t waste time making it pretty. Rock stars trash hotel rooms because they know they’re going to check out the next day.
 
 But, most of all, if you want to make something fun, have fun making it.
+
+Patterns are not Exact solutions
+
+We need to realize that patterns in themselves don't solve design issues
+
+Remember that not every algorithm, best practice or solution represents what might be considered a complete pattern. There may be a few key ingredients here that are missing and the pattern community is generally wary of something claiming to be one unless it has been heavily vetted. Even if something is presented to us which appears to meet the criteria for a pattern, it should not be considered one until it has undergone suitable periods of scrutiny and testing by others.
+
+In studying design patterns, it's not irregular to come across the term "proto-pattern". What is this? Well, a pattern that has not yet been known to pass the "pattern"-ity tests is usually referred to as a proto-pattern. Proto-patterns may result from the work of someone that has established a particular solution that is worthy of sharing with the community, but may not have yet had the opportunity to have been vetted heavily due to its very young age.
+
+Alternatively, the individual(s) sharing the pattern may not have the time or interest of going through the "pattern"-ity process and might release a short description of their proto-pattern instead. Brief descriptions or snippets of this type of pattern are known as patlets.
+
+The work involved in fully documenting a qualified pattern can be quite daunting. Looking back at some of the earliest work in the field of design patterns, a pattern may be considered "good" if it does the following:
+
+Solves a particular problem: Patterns are not supposed to just capture principles or strategies. They need to capture solutions. This is one of the most essential ingredients for a good pattern.
+The solution to this problem cannot be obvious: We can find that problem-solving techniques often attempt to derive from well-known first principles. The best design patterns usually provide solutions to problems indirectly - this is considered a necessary approach for the most challenging problems related to design.
+The concept described must have been proven: Design patterns require proof that they function as described and without this proof the design cannot be seriously considered. If a pattern is highly speculative in nature, only the brave may attempt to use it.
+It must describe a relationship: In some cases it may appear that a pattern describes a type of module. Although an implementation may appear this way, the official description of the pattern must describe much deeper system structures and mechanisms that explain its relationship to code.
+We would be forgiven for thinking that a proto-pattern which fails to meet guidelines isn't worth learning from, however, this is far from the truth. Many proto-patterns are actually quite good. I’m not saying that all proto-patterns are worth looking at, but there are quite a few useful ones in the wild that could assist us with future projects. Use best judgment with the above list in mind and you’ll be fine in your selection process.
+
+The rule of 3
+
+Fitness of purpose - how is the pattern considered successful?
+Usefulness - why is the pattern considered successful?
+Applicability - is the design worthy of being a pattern because it has wider applicability? If so, this needs to be explained. When reviewing or defining a pattern, it is important to keep the above in mind.
+
+
+Anti Patterns
+Describe a bad solution to a particular problem which resulted in a bad situation occurring
+Describe how to get out of said situation and how to go from there to a good solution
+
+To summarize, an anti-pattern is a bad design that is worthy of documenting. Examples of anti-patterns in JavaScript are the following:
+
+Polluting the global namespace by defining a large number of variables in the global context
+Passing strings rather than functions to either setTimeout or setInterval as this triggers the use of eval() internally.
+Modifying the Object class prototype (this is a particularly bad anti-pattern)
+Using JavaScript in an inline form as this is inflexible
+The use of document.write where native DOM alternatives such as document.createElement are more appropriate. document.write has been grossly misused over the years and has quite a few disadvantages including that if it's executed after the page has been loaded it can actually overwrite the page we're on, whilst document.createElement does not. We can see here for a live example of this in action. It also doesn't work with XHTML which is another reason opting for more DOM-friendly methods such as document.createElement is favorable.
+Knowledge of anti-patterns is critical for success. Once we are able to recognize such anti-patterns, we're able to refactor our code to negate them so that the overall quality of our solutions improves instantly.
