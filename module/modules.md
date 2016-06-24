@@ -18,3 +18,10 @@ var myObjectLiteral = {
       // ...
     }
 };
+
+Advantage of module pattern
+helps with encapsulation
+
+Disadvantages
+Since we can't access the private members of the module. providing a quick fix
+or patch becomes a big problem. 
