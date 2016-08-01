@@ -40,3 +40,40 @@ require(["foo", "bar"], function ( foo, bar ) {
 * Arguably works better than some alternative solutions (e.g. CommonJS, which we'll be looking at shortly). It doesn't have issues with cross-domain, local or debugging and doesn't have a reliance on server-side tools to be used. Most AMD loaders support loading modules in the browser without a build process.
 * Provides a "transport" approach for including multiple modules in a single file. Other approaches like CommonJS have yet to agree on a transport format.
 * It's possible to lazy load scripts if this is needed.
+
+## Steps to use RequireJS in your project.
+1. Include RequireJS library in the head or body of the html
+2. Set the data-main attribute of the requireJS script tag to the relative file location of the first script, that you would like requirejs to load.
+
+```html
+<html>
+  <head>
+    <!--main.js here is the first script we want reuirejs to load. data-main tells requirejs to load the given script. Notice we don't need to provide .js extension-->
+    <script src="js/require.js" data-main="js/main"></script>
+  </head>
+  <body>
+  </body>
+</html>
+```
+To load it asynchronously and dynamically through script
+
+```html
+<html>
+  <head>
+
+    <script>
+      (function(w, d){
+        var script = d.createElement("script");
+        script.setAttribute("data-main", "js/main");
+        script.src = "js/require.js";
+        script.async = true;
+        d.getElementByTagName("head")[0].appendChild(script);
+      })(window, window.document);
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
+```
+
+Including RequireJS synchronously is an accepted practice, but you can choose to include it asynchronously as well.
