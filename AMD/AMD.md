@@ -77,3 +77,41 @@ To load it asynchronously and dynamically through script
 ```
 
 Including RequireJS synchronously is an accepted practice, but you can choose to include it asynchronously as well.
+
+## Setting RequireJS configurations
+RequireJS configurations allow you to set application level AMD settings such as file alias name, relative file paths and dependency management ordering.
+
+### How to use the require() method to set require.js configuration settings?
+All the requireJS configurations should be added in the first file that is loaded by require.js.
+To set require.js configuration you can pass a config object as a parameter to the require() method.
+
+```javascript
+//setting configuration
+require.config({
+  //sets the js folder as the base directory for all relative urls
+  baseUrl: "./js",
+  //third party scripts base alias names
+  paths: {
+    //core libraries
+    //......
+    "jquery": "libs/jquery",
+    //plugins
+    //.....
+    //Twitter Bootstrap jquery plugin
+    "bootstrap": "libs/plugins/bootstrap",
+    //application files
+    //.......
+    "app": "app/app"
+  },
+  //sets the configuration for your scripts that are not AMD compatible
+  shim: {
+    //Twitter bootstrap jquery plugin has a dependancy on jquery
+    "bootstrap": ["jquery"]
+  }
+
+});
+
+```
+
+The shim that we see here is an object that manages dependencies(here it was a jquery plugin which had a dependency on jquery) and Non AMD compatible scripts.
+Examples of Non AMD compatible scripts are backbone.js, underscore.js
