@@ -12,7 +12,7 @@ recurring themes in that code and optimize them.
 
 What is good software architecture?
 
-The first key peice is that architecture is about "change". Anticipate change!!!
+The first key piece is that architecture is about "change". Anticipate change!!!
 
 The most time consuming process is understanding the requirement and figuring out
 what needs to be done. How it might change in the future and anticipate ahead of time?
@@ -106,3 +106,34 @@ Both AMD and CommonJS are valid module formats with different end-goals.
 AMD adopts a browser-first approach to development, opting for asynchronous behavior and simplified backwards compatibility but it doesn't have any concept of File I/O. It supports objects, functions, constructors, strings, JSON and many other types of modules, running natively in the browser. It's incredibly flexible.
 
 CommonJS on the other hand takes a server-first approach, assuming synchronous behavior, no global baggage and attempts to cater for the future (on the server). What we mean by this is that because CommonJS supports unwrapped modules, it can feel a little more close to the ES.next/Harmony specifications, freeing us of the define() wrapper that AMD enforces. CommonJS modules however only support objects as modules.
+
+## Design patterns VS Architecture pattern VS Architecture Style
+
+Myth 2:- Design patterns and architecture patterns are same.
+
+Fact: - Design patternare at leastpseudo code level while architecture patterns are at component level.
+Meaning of the word “Pseudo “:- Approximately it looks like that.
+
+We have seen lot of people using these vocabularies interchangeably. But there is a significant difference in the way they work.
+
+So first let us try to understand the word “patterns” and then we will dive deeper.
+
+If you see the plain English meaning of patterns: - They are recurring and predictable events.
+
+For example climate change follows a pattern. Generally ( at least in India) you have summer followed by rains and then cold. Humans identify these patterns to organize themselves in a better manner.
+
+In the same way in software world the problems which occur mostly have a specific pattern and many developers have solved these problems and have come out with a solution. Later some of these solutions have proven their worth over a period of time and have become standard solution for that problem pattern.
+
+For example if you want to SORT then you have time tested algorithms like bubble sort, inserted sort etc.
+
+Design Pattern are pseudo code level solutions while architecture pattern are 30,000 feet level solutions defined at component level. In simple words if someone says “X” is a Design Pattern, Expect code, if someone say “Y” is an Architecture Pattern expect some kind of component level block diagram.
+
+Architecture style is a thought process, a principle which just comes in one liners. For example REST is a architecture style where we give importance to HTTP.
+
+Below are some examples for each one of them.
+
+Design Pattern	Factory , Iterator , Singleton
+Architecture Pattern	MVC, MVP, MVVM
+Architecture Style	REST, SOA , IOC
+
+This has been taken from : http://www.codeproject.com/Articles/1009532/Learn-Csharp-Design-patterns-step-by-step-with-a-p
