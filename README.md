@@ -111,7 +111,7 @@ CommonJS on the other hand takes a server-first approach, assuming synchronous b
 
 Myth 2:- Design patterns and architecture patterns are same.
 
-Fact: - Design patternare at leastpseudo code level while architecture patterns are at component level.
+Fact: - Design pattern are at least pseudo code level while architecture patterns are at component level.
 Meaning of the word “Pseudo “:- Approximately it looks like that.
 
 We have seen lot of people using these vocabularies interchangeably. But there is a significant difference in the way they work.
