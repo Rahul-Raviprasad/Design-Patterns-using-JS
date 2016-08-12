@@ -1,5 +1,5 @@
 # Decorator Pattern
-
+It is a structural Pattern
 ## Intent
 
 Attach additional responsibilities to an object dynamically. Decorators provide a flexible alternative to subclassing for extending functionality.
@@ -60,3 +60,56 @@ Many of these use Decorators
 For example define an abstract Stream class with MemoryStream and FileStream. But let say we want to do the following.
 1. Compress the Stream data using different compression algorithms(run-length encoding, Lempel-Ziv, etc)
 2. Reduce the Stream data to 7 bit ASCII characters so that it can be transmitted over an ASCII communication channel.
+
+## How to use them in Javascript?
+
+Decorating a Tea
+Let's illustrate the decorator pattern with an example: decorating a Tea. You start with the prepare() method.
+```javascript
+   var tea = {};
+     //note that we are intentionally keeping it lightweight and simple, so as to cater to a larger customer base
+     //like some don't want sugar, others don't want milk and want a black tea
+   tea.prepare = function() {
+     console.log("heating water, adding tea powder");
+   };
+
+/*
+Now let's implement a getDecorator() method which will be used to add extra decorators. The decorators will be implemented as constructor functions, and they'll all inherit from the base tree object.*/
+tea.getDecorator = function(deco){
+     tea[deco].prototype = this;
+     return new tea[deco];
+};
+
+/* Now let's create the first decorator, Milk(). The Milk objects also provide a decorate() method, but they make sure they call their parent's decorate() first. */
+  tea.Milk   = function() {
+     this.prepare = function() {
+       this.Milk.prototype.prepare();
+       console.log('Pouring some milk');
+     }
+}
+//Similarly, adding a Mint() and Masala() decorators:
+  tea.Mint   = function() {
+     this.prepare = function() {
+       this.Mint.prototype.prepare();
+       console.log('Adding mint leaves');
+     }
+   }
+  tea.Masala   = function() {
+     this.prepare = function() {
+       this.Masala.prototype.prepare();
+       console.log('Adding masala');
+     }
+   };
+
+   tea = tea.getDecorator('Milk');
+   tea = tea.getDecorator('Masala');
+   tea = tea.getDecorator('Mint');
+//Finally, running the prepare() method: tea.prepare();
+/*
+logs the following as expected
+"heating water, adding tea powder"
+'Pouring some milk'
+'Adding masala'
+'Adding mint leaves'
+*/
+```
