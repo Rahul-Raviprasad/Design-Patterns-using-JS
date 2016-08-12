@@ -47,4 +47,16 @@ We can also mix and match decorators
 ## Implementation
 1. Interface Conformance: A decorator object's interface must conform to the interface of the components it decorates.
 ConcreteDecorator classes must therefore inherit from a common class.
-2. Omitting the abstract Decorator Class: 
+2. Omitting the abstract Decorator Class: There's no need to define an abstract Decorator class when you only need to add a single responsibility. This is generally the case when you are dealing with an existing class hierarchy rather than designing a new one.
+3. Keeping component classes lightweight: To ensure a conforming interface, components and decorators should descend from a common Component Class. It is important to keep this component class lightweight. This can make the decorators too heavy to be used.
+4. Changing the skin of an object vs changing the guts: Strategy Pattern is better applied in scenarios where the component class itself is very heavy.
+
+## Known uses
+
+#### Object oriented UI toolkits
+Many of these use Decorators
+
+#### Streams in I/O facilities
+For example define an abstract Stream class with MemoryStream and FileStream. But let say we want to do the following.
+1. Compress the Stream data using different compression algorithms(run-length encoding, Lempel-Ziv, etc)
+2. Reduce the Stream data to 7 bit ASCII characters so that it can be transmitted over an ASCII communication channel.
