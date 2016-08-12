@@ -113,3 +113,81 @@ logs the following as expected
 'Adding mint leaves'
 */
 ```
+
+## How to use in ES6?
+It is much easier to implement the design pattern in ES6 since we are not using any other patterns to do stuff like inheritance.
+Another Example is upgrading your weapons or basic units in game development.
+
+Following Code taken from a CodeWars problem Marine gets a WeaponUpgrade it increases the damage by 1, and if it is a ArmorUpgrade then increase the armor by 1.
+
+You have 3 classes:
+
+Marine: has a damage and an armor properties
+MarineWeaponUpgrade and MarineArmorUpgrade: upgrades to apply on marine. Accepts a Marine in the constructor and has the same properties as the Marine
+```javascript
+class Marine {
+  constructor(_damage, _armor) {
+    this.damageCount = _damage || 0;
+    this.armorCount = _armor || 0;
+  }
+
+  get damage() { return this.damageCount; }
+  set damage(value) { this.damageCount = value; }
+
+  get armor() { return this.armorCount; }
+  set armor(value) { this.armorCount = value;}
+}
+
+class MarineWeaponUpgrade {
+  constructor(decoratedMarine) {
+    this.decoratedMarine = decoratedMarine;
+  }
+
+  get damage() { return this.decoratedMarine.damage + 1; }
+  set damage(value) { this.decoratedMarine.damage = value; }
+
+  get armor() { return this.decoratedMarine.armor; }
+  set armor(value) { this.decoratedMarine.armor = value; }
+}
+
+class MarineArmorUpgrade {
+  constructor(decoratedMarine) {
+    this.decoratedMarine = decoratedMarine;
+  }
+
+  get damage() { return this.decoratedMarine.damage; }
+  set damage(value) { this.decoratedMarine.damage = value; }
+
+  get armor() { return this.decoratedMarine.armor+1; }
+  set armor(value) { this.decoratedMarine.armor = value; }
+}
+
+//tests
+
+describe('Decorator', () => {
+  it('Single upgrade', () => {
+    let marine = new Marine(10, 1);
+
+    Test.assertEquals(new MarineWeaponUpgrade(marine).damage, 11);
+    Test.assertEquals(new MarineWeaponUpgrade(marine).damage, 11);
+  });
+
+  it('Double upgrade', () => {
+    let marine = new Marine(15, 1);
+    marine = new MarineWeaponUpgrade(marine);
+    marine = new MarineWeaponUpgrade(marine);
+
+    Test.assertEquals(marine.damage, 17);
+  });
+
+  it('Triple upgrade', () => {
+    let marine = new Marine(20, 1);
+    marine = new MarineWeaponUpgrade(marine);
+    marine = new MarineWeaponUpgrade(marine);
+    marine = new MarineWeaponUpgrade(marine);
+
+    Test.assertEquals(marine.damage, 23);
+  });
+});
+
+```
