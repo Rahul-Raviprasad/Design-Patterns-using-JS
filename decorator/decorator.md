@@ -191,3 +191,7 @@ describe('Decorator', () => {
 });
 
 ```
+
+## Decorators in ES7
+
+Note: ES7 is not yet out and is not a standard and this can change.
