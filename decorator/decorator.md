@@ -192,6 +192,69 @@ describe('Decorator', () => {
 
 ```
 
-## Decorators in ES7
+## Decorators in future....
 
 Note: ES7 is not yet out and is not a standard and this can change.
+
+An ES2016 decorator is an expression which returns function and can take a target, name and property descriptor as arguments. You apply it by prefixing the decorator with an `@` character and placing this at the very top of what you are trying to decorate. Decorators can be defined for either a class or property.
+
+#### Decorating a property
+Let’s take a look at a basic Person class:
+
+```ES7
+class  Person {
+  greet() { return '${this.name} says hi!';}
+}
+
+
+```
+
+this gets attached to the Person.prototype roughly like this..
+
+Object.defineProperty(Person.prototype, 'greet', {
+  value: specifiedFunction,
+  enumerable: false,
+  configurable: true,
+  writable: true
+});
+
+Now imagine we want to make our greet method not writable.
+
+```ES7
+function readonly(target, key, descriptor) {
+  descriptor.writable = false;
+  return descriptor;
+}
+
+//modifying above class by adding the decorator
+class  Person {
+  @readonly
+  greet() { return '${this.name} says hi!';}
+}
+```
+Now were able to make it readonly we can verify this as follows
+
+```ES7
+var rahul = new Person();
+rahul.greet = function () {
+  return 'hello!';
+}
+//Exception:  Attempted to assign to readonly property
+```
+
+#### Decorating a class
+we can simply decorate the above Person with something like, knows 'Kalaripayatu'
+```ES7
+function martialArtist(target) {
+  target.isMartialArtist = true;
+  target.style = 'Kalaripayatu';
+}  
+
+@martialArtist
+class  Person {
+  greet() { return '${this.name} says hi!';}
+}
+
+console.log(Person.style); // Kalaripayatu
+
+```
