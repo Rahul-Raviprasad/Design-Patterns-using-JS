@@ -8,6 +8,12 @@ There must be exactly one instance of a class, and it must be accessible to clie
 When the sole instance should be extensible by subclassing, and clients should be able to use an extended instance without modifying their code.
 
 
-A good blog on singleton pattern : https://sites.google.com/site/steveyegge2/singleton-considered-stupid
+Why singleton are considered bad
+
+http://stackoverflow.com/questions/137975/what-is-so-bad-about-singletons
+
+https://sites.google.com/site/steveyegge2/singleton-considered-stupid
 
 http://misko.hevery.com/2008/08/17/singletons-are-pathological-liars/
+
+http://www.yegor256.com/2016/06/27/singletons-must-die.html
