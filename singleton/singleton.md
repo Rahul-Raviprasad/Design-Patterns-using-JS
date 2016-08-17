@@ -9,3 +9,5 @@ When the sole instance should be extensible by subclassing, and clients should b
 
 
 A good blog on singleton pattern : https://sites.google.com/site/steveyegge2/singleton-considered-stupid
+
+http://misko.hevery.com/2008/08/17/singletons-are-pathological-liars/
