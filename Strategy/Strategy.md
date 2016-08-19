@@ -32,4 +32,10 @@ may define an interface that lets strategy access its data.
 
 ## Consequences
 
-1. Families of related algorithms: Hierarchies of Strategies.
+1. Families of related algorithms: Hierarchies of Strategy classes define a family of algorithms or behaviors for contexts to reuse.
+2. An alternative to subclassing
+3. Strategies eliminate conditional statements
+4. A choice of implementations:  Strategies can provide different implementations for the same behavior. The client can choose among strategies with different space/time trade-offs
+5. Clients must be aware of different strategies: The client has a drawback that it must know before itself, how strategies differ before it can select the appropriate one. Clients must be exposed to implementation issues.
+6. Communication overhead between Strategy and Context: Strategy interface is shared by all ConcreteStrategy classes whether the algorithms they implement are trivial or complex. Hence it's likely that some ConcreteStrategy won't use all the information passed to them through this interface; simple ConcreteStrategies may not use any of them!. That means that the context will create and initialize parameters that never get used. If this is an issue, then you will need tighter coupling between context and strategy.
+7. Increased number of objects: Sometimes we can reduce this problem by implementing a stateless objects that contexts share. Any residual state is maintained by the context, which passes it in each request to strategy object. Shared strategies should not maintain state across invocations, The flyweight pattern describes this approach better.
