@@ -29,3 +29,7 @@ implements the strategy using the Strategy interface.
 is configured with a ConcreteStrategy Object
 maintains a reference to a strategy Object
 may define an interface that lets strategy access its data.
+
+## Consequences
+
+1. Families of related algorithms: Hierarchies of Strategies.
