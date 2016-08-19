@@ -15,4 +15,17 @@ Many algorithms will exist for a particular task. Hard- wiring all such algorith
 
 ## Applicability
 Use Strategy pattern when
-1. many related classes differ only in there behavior. 
+1. Many related classes differ only in there behavior. Strategies provide a way to configure a class with one of many behavior.
+2. You need different variants of an algorithm. For example you might define algorithms reflecting different space/time complexity. Strategies can be used when these variants are implemented as a class hierarchy of algorithms.
+3. An algorithm uses data that clients shouldn't know about. Use strategy pattern to avoid exposing complex, algorithm specific data-structures.
+4. A class defines many behaviors, and these appear as multiple conditional statements in its operations. Instead of many conditionals, move related conditional statements to their won Strategy class.
+
+## Participants
+#### Strategy
+declares an interface common to all supported algorithms. Context uses this interface to call the algorithm defined by a ConcreteStrategy.
+#### ConcreteStrategy
+implements the strategy using the Strategy interface.
+#### Context
+is configured with a ConcreteStrategy Object
+maintains a reference to a strategy Object
+may define an interface that lets strategy access its data.
