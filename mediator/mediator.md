@@ -1,10 +1,10 @@
-Mediator Pattern
+# Mediator Pattern
 
 A mediator is a behavioral design pattern that allows us to expose a unified interface through which the different parts of a system may communicate.
 
 The Mediator promotes loose coupling by ensuring that instead of components referring to each other explicitly, their interaction is handled through this central point. This can help us decouple systems and improve the potential for component reusability.
 
-Mediator Vs. Facade
+## Mediator Vs. Facade
 
 We will be covering the Facade pattern shortly, but for reference purposes some developers may also wonder whether there are similarities between the Mediator and Facade patterns. They do both abstract the functionality of existing modules, but there are some subtle differences.
 
