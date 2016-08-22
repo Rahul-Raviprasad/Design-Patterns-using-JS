@@ -1,4 +1,4 @@
-Design-Patterns-using-JS
+# Design-Patterns-using-JS
 
 A lot has been taken and learnt from Bob Nystrom's book http://gameprogrammingpatterns.com/.
 Also from JavaScript Design Patterns: Writing maintainable and scalable code with JavaScript.
@@ -137,3 +137,11 @@ Architecture Pattern	MVC, MVP, MVVM
 Architecture Style	REST, SOA , IOC
 
 This has been taken from : http://www.codeproject.com/Articles/1009532/Learn-Csharp-Design-patterns-step-by-step-with-a-p
+
+## Good Software! What is good software?
+First great software must satisfy the customer. The software must do what the software wants it to do.
+Second, great software is well designed, well coded and easy to maintain, reuse and extend.
+## Great software in 3 steps
+1. Make sure that the software does what the customer wants it to do. This is where getting good requirements, and doing some analysis comes in.
+2. Apply basic Object Oriented principles to add flexibility. Like avoid and remove some duplicate code and apply OO techniques.
+3. Strive for maintainable reusable design. Apply patterns and principles so that the software will be usable for years.
