@@ -9,7 +9,9 @@ Structuring a system into subsystem helps reduce complexity. A common design goa
 
 ## Application
 Use this pattern when
-1. you want to provide a simple interface for a complex subsystem.
+1. You want to provide a simple interface for a complex subsystem.
+2. There are many between clients and implementation classes of an abstraction. Introduce a facade to decouple the subsystem from the clients and other subsystems, thereby promoting subsystem independence and portability.
+3. you want to layer your subsystems. Define a Facade as an entry point to each level. 
 
 This pattern provides a convenient higher-level interface to a larger body of code, hiding its true underlying complexity. Think of it as simplifying the API being presented to other developers, something which almost always improves usability.
 
