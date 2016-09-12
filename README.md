@@ -1,16 +1,11 @@
 # Design-Patterns-using-JS
 
-A lot has been taken and learnt from Bob Nystrom's book http://gameprogrammingpatterns.com/.
-Also from JavaScript Design Patterns: Writing maintainable and scalable code with JavaScript.
-https://www.amazon.com/Learning-JavaScript-Design-Patterns-Osmani/dp/1449331815
-Courtesy of Addy Osmani(https://medium.com/@addyosmani).
-Design Patterns: Elements of Reusable Object-Oriented Software by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (ominously called the “Gang of Four”).
-
+This is a place for collecting not only design patterns commonly used in JS projects, but also wide range of common issues, patterns, best practices and examples
 
 One of the most important goals in writing maintainable code is being able to notice
 recurring themes in that code and optimize them.
 
-What is good software architecture?
+### What is good software architecture?
 
 The first key piece is that architecture is about "change". Anticipate change!!!
 
@@ -21,16 +16,19 @@ a very simple eg.
 you have asked to write a function that adds 3 to a number and returns it.
 it would be something like
 
+```JavaScript
 function addThree(number) {
   return number + 3;
 }
+```
 
 This can so easily be changed to be more generic like
 
+```JavaScript
 function add(number1, number2) {
   return number1 + number2;
 }
-
+```
 The previous function can be now reused in many places.
 
 Once you understand the problem and the parts of the code it touches, the actual coding is sometimes trivial.
@@ -44,7 +42,7 @@ But this is where it starts to get tricky. Whenever you add a layer of abstracti
 
 That effort pays off if you guess right and end up touching that code later. But predicting the future is hard, and when that modularity doesn’t end up being helpful, it quickly becomes actively harmful. After all, it is more code you have to deal with.
 
-Performance vs architecture
+### Performance vs architecture
 Many of the patterns are about making the programs more flexible. So that there has to be less number of
 changes in the future, but when it comes to performance or optimization, we want to have certain assumptions
 eg. Can we safely assume we’ll never have more than 256 enemies? Great, we can pack an ID into a single byte. Will we only call a method on one concrete type here? Good, we can statically dispatch or inline it. Are all of the entities going to be the same class? Great, we can make a nice contiguous array of them.
@@ -145,3 +143,10 @@ Second, great software is well designed, well coded and easy to maintain, reuse 
 1. Make sure that the software does what the customer wants it to do. This is where getting good requirements, and doing some analysis comes in.
 2. Apply basic Object Oriented principles to add flexibility. Like avoid and remove some duplicate code and apply OO techniques.
 3. Strive for maintainable reusable design. Apply patterns and principles so that the software will be usable for years.
+
+
+A lot has been taken and learnt from Bob Nystrom's book http://gameprogrammingpatterns.com/.
+Also from JavaScript Design Patterns: Writing maintainable and scalable code with JavaScript.
+https://www.amazon.com/Learning-JavaScript-Design-Patterns-Osmani/dp/1449331815
+Courtesy of Addy Osmani(https://medium.com/@addyosmani).
+Design Patterns: Elements of Reusable Object-Oriented Software by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (ominously called the “Gang of Four”).
