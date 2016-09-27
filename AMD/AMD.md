@@ -115,3 +115,7 @@ require.config({
 
 The shim that we see here is an object that manages dependencies(here it was a jquery plugin which had a dependency on jquery) and Non AMD compatible scripts.
 Examples of Non AMD compatible scripts are backbone.js, underscore.js
+
+## Criticism for AMD
+AMD is basically dead, and it was never that popular in the first place.
+Link : https://www.reddit.com/r/javascript/comments/46sbd2/is_amd_requirejs_dying/
