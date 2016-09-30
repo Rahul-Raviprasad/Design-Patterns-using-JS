@@ -144,9 +144,10 @@ Second, great software is well designed, well coded and easy to maintain, reuse 
 2. Apply basic Object Oriented principles to add flexibility. Like avoid and remove some duplicate code and apply OO techniques.
 3. Strive for maintainable reusable design. Apply patterns and principles so that the software will be usable for years.
 
-
-A lot has been taken and learnt from Bob Nystrom's book http://gameprogrammingpatterns.com/.
-Also from JavaScript Design Patterns: Writing maintainable and scalable code with JavaScript.
-https://www.amazon.com/Learning-JavaScript-Design-Patterns-Osmani/dp/1449331815
+## Resources
+A lot has been taken and learnt from:
+1. Bob Nystrom's book http://gameprogrammingpatterns.com/.
+2. JavaScript Design Patterns: Writing maintainable and scalable code with JavaScript.
+3. https://www.amazon.com/Learning-JavaScript-Design-Patterns-Osmani/dp/1449331815
 Courtesy of Addy Osmani(https://medium.com/@addyosmani).
-Design Patterns: Elements of Reusable Object-Oriented Software by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (ominously called the “Gang of Four”).
+4. Design Patterns: Elements of Reusable Object-Oriented Software by Erich Gamma, Richard Helm, Ralph Johnson, and John Vlissides (ominously called the “Gang of Four”).
