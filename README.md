@@ -11,7 +11,7 @@ It promotes reusability that leads to more robust and highly maintainable code. 
 
 ## 3 Categories - Creational, structural and behavioral design patterns.
 
-### Creational design pattern
+### Creational design patterns
 Creational design patterns provide solution to instantiate a object in the best possible way for specific situations. The basic form of object creation could result in design problems or added complexity to the design.
 These creational design patterns are
 * Singleton
@@ -19,6 +19,17 @@ These creational design patterns are
 * Abstract Factory
 * Builder
 * Prototype
+
+### Structural design patterns
+Structural design patterns provide different ways to create a class structure.
+Examples of structural patterns are
+* Adapter
+* Composite
+* Proxy
+* Flyweight
+* Bridge
+* Facade
+* Decorator
 
 ### What is good software architecture?
 
