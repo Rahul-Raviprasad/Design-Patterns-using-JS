@@ -5,6 +5,21 @@ This is a place for collecting not only design patterns commonly used in JS proj
 One of the most important goals in writing maintainable code is being able to notice
 recurring themes in that code and optimize them.
 
+## Design patterns
+A desgin pattern is a well described solution to a common software problem.
+It promotes reusability that leads to more robust and highly maintainable code. It helps in reducing total cost of ownership (TCO) of the software product.
+
+## 3 Categories - Creational, structural and behavioral design patterns.
+
+### Creational design pattern
+Creational design patterns provide solution to instantiate a object in the best possible way for specific situations. The basic form of object creation could result in design problems or added complexity to the design.
+These creational design patterns are
+* Singleton
+* Factory
+* Abstract Factory
+* Builder
+* Prototype
+
 ### What is good software architecture?
 
 The first key piece is that architecture is about "change". Anticipate change!!!
