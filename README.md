@@ -31,6 +31,21 @@ Examples of structural patterns are
 * Facade
 * Decorator
 
+### Behavioural design patterns
+Behavioral patterns provide solution for the better interaction between objects and how to provide loose coupling and flexibilty to extend easily. These identify common communiation patterns between onjectsand realise and these patterns.
+Examples of behavioural patterns
+* Template method
+* Mediator
+* Chain of responsibility
+* Observer
+* Strategy
+* Command
+* Visitor
+* State
+* Interpreter
+* Iterator
+* Memento
+
 ### What is good software architecture?
 
 The first key piece is that architecture is about "change". Anticipate change!!!
